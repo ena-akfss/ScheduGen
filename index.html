@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ScheduGen 0.18.0 (data schema v4)
+  ScheduGen 0.19.0 (data schema v4)
 
   What this file is: ScheduGen, a daily schedule generator. It is one self-contained page that you open by double-click.
 
@@ -17,7 +17,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-bDTruSTj22PpkIuh3IZE6SikXq1Varh2UfvqaZbFIVo='; style-src 'unsafe-inline'; img-src data:; font-src 'none'; connect-src 'none'; worker-src blob:; frame-src 'none'; object-src 'none'; media-src 'none'; manifest-src 'none'; form-action 'none'; base-uri 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-8WSCumDMWepFhcnSlxSLTm0f6Ss+AQylVpB43F7iL1c='; style-src 'unsafe-inline'; img-src data:; font-src 'none'; connect-src 'none'; worker-src blob:; frame-src 'none'; object-src 'none'; media-src 'none'; manifest-src 'none'; form-action 'none'; base-uri 'none'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScheduGen</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjI5NiAyNjYgNTQ4IDU0OCI+CiAgPCEtLSBTY2hlZHVHZW4gZmF2aWNvbiAodGhlIHByb2plY3QncyBvd24gYXJ0d29yayk6IGEgY2FsZW5kYXIgd2l0aCBhIHNwYXJrLiBCbGFjayBvbiBsaWdodCB0YWIgYmFycywgd2hpdGUgb24gZGFyayBvbmVzLiAtLT4KICA8c3R5bGU+cGF0aHtmaWxsOiMwMDB9QG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTpkYXJrKXtwYXRoe2ZpbGw6I2ZmZn19PC9zdHlsZT4KICA8cGF0aCBkPSJNNDEyIDMyNCBDNDEyIDMxMC43IDQyMi43IDMwMCA0MzYgMzAwIEM0NDkuMyAzMDAgNDYwIDMxMC43IDQ2MCAzMjQgTDQ2MCAzNjQgTDYyMCAzNjQgTDYyMCAzMjQgQzYyMCAzMTAuNyA2MzAuNyAzMDAgNjQ0IDMwMCBDNjU3LjMgMzAwIDY2OCAzMTAuNyA2NjggMzI0IEw2NjggMzU2LjgzNCBMNjU2LjIzOSAzODQuMjM5IEw2MDkuMDk1IDQwNC40NzEgQzYwNC42ODQgNDA2LjM0OCA2MDAuNzA3IDQwOC45MSA1OTcuMjY0IDQxMiBMNDM2IDQxMiBMMzgwIDQxMiBDMzcxLjIgNDEyIDM2NCA0MTkuMiAzNjQgNDI4IEwzNjQgNDc2IEw1OTcuMjY0IDQ3NiBDNjAwLjcwNyA0NzkuMDkgNjA0LjY4NCA0ODEuNjUyIDYwOS4wOTUgNDgzLjUyOSBMNjU2LjIzOSA1MDMuNzYxIEw2NjQuOTI1IDUyNCBMNjI4IDUyNCBMNjI4IDYwNCBMNzE2IDYwNCBMNzE2IDU3NyBDNzMzLjIxNSA1NzcgNzQ4Ljc4NiA1NjYuNzQ5IDc1NS41MjkgNTUwLjkwNSBMNzY0IDUzMS4xNjYgTDc2NCA3MTYgQzc2NCA3NTEuMyA3MzUuMyA3ODAgNzAwIDc4MCBMMzgwIDc4MCBDMzQ0LjcgNzgwIDMxNiA3NTEuMyAzMTYgNzE2IEwzMTYgNDI4IEMzMTYgMzkyLjcgMzQ0LjcgMzY0IDM4MCAzNjQgTDQxMiAzNjQgWiBNMzY0IDUyNCBMMzY0IDYwNCBMNDUyIDYwNCBMNDUyIDUyNCBaIE01MDAgNTI0IEw1MDAgNjA0IEw1ODAgNjA0IEw1ODAgNTI0IFogTTM2NCA2NTIgTDM2NCA3MTYgQzM2NCA3MjQuOCAzNzEuMiA3MzIgMzgwIDczMiBMNDUyIDczMiBMNDUyIDY1MiBaIE01MDAgNjUyIEw1MDAgNzMyIEw1ODAgNzMyIEw1ODAgNjUyIFogTTYyOCA2NTIgTDYyOCA3MzIgTDcwMCA3MzIgQzcwOC44IDczMiA3MTYgNzI0LjggNzE2IDcxNiBMNzE2IDY1MiBaIi8+CiAgPHBhdGggZD0iTTY5OS40NjIgMzQ2LjkxMyBDNzAyLjI3NSAzNDAuMjc1IDcwOC44IDMzNiA3MTYgMzM2IEM3MjMuMiAzMzYgNzI5LjcyNSAzNDAuMjc1IDczMi41MzggMzQ2LjkxMyBMNzUwLjQ1IDM4OC42NTMgTDc1Ni43MjUgNDAzLjI3NSBMNzU5LjUyNSA0MDQuNDc3IEw3NTkuNTI1IDQwNC40NzcgTDgxMy4wODcgNDI3LjQ2MiBDODE5LjcyNSA0MzAuMjc1IDgyNCA0MzYuOCA4MjQgNDQ0IEM4MjQgNDUxLjIgODE5LjcyNSA0NTcuNzI1IDgxMy4wODcgNDYwLjUzOCBMNzY0IDQ4MS42MDMgTDc1Ni43MjUgNDg0LjcyNSBMNzMyLjUzOCA1NDEuMDg3IEM3MjkuNzI1IDU0Ny43MjUgNzIzLjIgNTUyIDcxNiA1NTIgQzcwOC44IDU1MiA3MDIuMjc1IDU0Ny43MjUgNjk5LjQ2MiA1NDEuMDg3IEw2OTIuMTMgNTI0IEw2NzUuMjc1IDQ4NC43MjUgTDY1NC45NDQgNDc2IEw2MTguOTEzIDQ2MC41MzggQzYxMi4yNzUgNDU3LjcyNSA2MDggNDUxLjIgNjA4IDQ0NCBDNjA4IDQzNi44IDYxMi4yNzUgNDMwLjI3NSA2MTguOTEzIDQyNy40NjIgTDY1NC45NDQgNDEyIEw2NzUuMjc1IDQwMy4yNzUgTDY5Mi4xMyAzNjQgWiIvPgo8L3N2Zz4K">
@@ -1010,6 +1010,12 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
 
 .cfg-title { display: inline-flex; align-items: center; gap: 2px; }
 
+/* ---------- Linked database file (start page) ---------- */
+.home-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: min(660px, 100%); margin-top: 14px; padding: 10px 14px; text-align: left; border: 1px dashed var(--border-medium); border-radius: 8px; }
+.home-link[hidden] { display: none; }
+.home-link-text small { display: block; color: var(--text-secondary); font-size: calc(12px * var(--text-scale)); }
+.home-link-btns { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+
     </style>
 </head>
 <body>
@@ -1056,12 +1062,13 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         <div class="sidebar-footer">
             <div id="backup-status" class="nav-label" style="margin-bottom: 12px; font-weight: 500;">Last backup: Never</div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
+                <button type="button" class="btn primary" id="btn-link-save" title="Save to the linked database file" hidden><svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg> <span class="nav-label">Save to database</span></button>
                 <button type="button" class="btn" id="btn-export" title="Export Backup"><svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg> <span class="nav-label">Export Backup</span></button>
                 <button type="button" class="btn" id="btn-import" title="Import Backup"><svg class="icon" aria-hidden="true"><use href="#icon-upload"></use></svg> <span class="nav-label">Import Backup</span></button>
                 <input type="file" id="import-file-input" accept=".json" style="display: none;">
                 <button type="button" class="btn" id="btn-theme" style="margin-top: 8px;" title="Switch between light and dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg> <span class="nav-label">Light or dark</span></button>
             </div>
-            <div class="build-stamp nav-label" id="build-stamp">ScheduGen 0.18.0 (data schema v4)</div>
+            <div class="build-stamp nav-label" id="build-stamp">ScheduGen 0.19.0 (data schema v4)</div>
         </div>
     </nav>
 
@@ -1085,7 +1092,8 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
                 <button type="button" class="home-card" id="home-config"><svg class="icon" aria-hidden="true"><use href="#icon-cog"></use></svg><span><strong>Configuration</strong><small>Staffing, shift codes, cell colours and rules</small></span></button>
                 <button type="button" class="home-card" id="home-prefs"><svg class="icon" aria-hidden="true"><use href="#icon-sliders"></use></svg><span><strong>Application preferences</strong><small>Colour, font, text size and theme</small></span></button>
             </div>
-            <p class="home-foot small muted"><button type="button" class="link-btn" id="home-tour">Take the tour</button> <span aria-hidden="true">&middot;</span> ScheduGen 0.18.0 (data schema v4)</p>
+            <div id="home-link" class="home-link" hidden></div>
+            <p class="home-foot small muted"><button type="button" class="link-btn" id="home-tour">Take the tour</button> <span aria-hidden="true">&middot;</span> ScheduGen 0.19.0 (data schema v4)</p>
         </section>
 
         <section id="view-schedule" class="view-section xl">
@@ -1383,8 +1391,8 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
             <div id="rep-body">
                 <div id="rep-tiles" class="grid-4"></div>
                 <section class="rep-card" aria-labelledby="rep-h-person">
-                    <h2 id="rep-h-person">Hours on position by person</h2>
-                    <p class="hint">Click a person for their split, TOP included.</p>
+                    <h2 id="rep-h-person">Hours on position and TOP, by person</h2>
+                    <p class="hint">Click a person for their split.</p>
                     <div id="rep-ring-bar" class="rep-ring-bar" hidden><button type="button" class="btn small" id="rep-ring-back">Back to everyone</button><span id="rep-ring-note" class="small muted"></span></div>
                     <div id="rep-legend" class="legend"></div>
                     <div id="rep-chart-person" class="chart" role="list"></div>
@@ -1416,12 +1424,12 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         <!-- About and privacy -->
         <section id="view-about" class="view-section">
             <h1>About and privacy</h1>
-            <p><strong>ScheduGen 0.18.0 (data schema v4)</strong></p>
+            <p><strong>ScheduGen 0.19.0 (data schema v4)</strong></p>
             <p>ScheduGen builds a first draft of the daily position schedule. It is a single page that runs entirely inside this browser tab.</p>
             <h2>What it does and does not do</h2>
             <ul class="plain-list">
                 <li>It makes no network requests. Nothing you type, paste or generate is sent anywhere. The page carries a rule (a Content Security Policy) that makes the browser itself refuse any connection.</li>
-                <li>It keeps its data only in this browser's local storage on this computer, under the names listed below. It uses no cookies.</li>
+                <li>It keeps its data in this browser's local storage on this computer, under the names listed below, and, if you link one, in a database file you choose (the browser asks before ScheduGen may open or save it). It uses no cookies.</li>
                 <li>A file leaves the page only when you press a button: the schedule as an Excel file (.xlsx) and the backup (.json). A file enters only when you choose a backup file, open a day file, choose a schedule workbook (.xlsx), or paste text.</li>
                 <li>It contains no third-party program code. The icons are Font Awesome Free (CC BY 4.0), drawn inline.</li>
             </ul>
@@ -4523,14 +4531,29 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       URL.revokeObjectURL(url);
     }, 1e3);
   }
-  function exportBackup() {
-    getState().lastBackup = (/* @__PURE__ */ new Date()).toISOString();
-    save();
-    updateBackupTime();
+  function backupData() {
     const more = extras.backup.reduce(function(a, x) {
       return x.save ? Object.assign(a, x.save()) : a;
     }, {});
-    downloadJson("ScheduGen_Backup_" + localDate() + ".json", Object.keys(more).length ? Object.assign({}, getState(), more) : getState());
+    return Object.keys(more).length ? Object.assign({}, getState(), more) : getState();
+  }
+  function markBackedUp() {
+    getState().lastBackup = (/* @__PURE__ */ new Date()).toISOString();
+    save();
+    updateBackupTime();
+  }
+  function exportBackup() {
+    markBackedUp();
+    downloadJson("ScheduGen_Backup_" + localDate() + ".json", backupData());
+  }
+  function applyBackup(parsed) {
+    const imported = migrate(parsed);
+    quarantine(JSON.stringify(getState()), "before_restore");
+    setState(imported);
+    each(extras.backup, "restore", [parsed]);
+    save();
+    updateBackupTime();
+    return imported;
   }
   function importBackup(event) {
     const input = event.target;
@@ -4549,11 +4572,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         const parsed = parseBackup(e.target.result);
         const imported = migrate(parsed);
         const apply = function() {
-          quarantine(JSON.stringify(getState()), "before_restore");
-          setState(imported);
-          each(extras.backup, "restore", [parsed]);
-          save();
-          updateBackupTime();
+          applyBackup(parsed);
           navigate(imported.currentDay ? "view-schedule" : "view-staff");
           toast("Backup restored: " + imported.staff.length + " staff" + (imported.currentDay ? ", with the schedule that was in progress" : "") + ".");
         };
@@ -4585,7 +4604,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     try {
       for (let i = 0; i < localStorage.length; i++) {
         const k = localStorage.key(i);
-        if (k === THEME_KEY || k === "sg_ui" || k === ARCHIVE_KEY || k && k.indexOf(DB_KEY) === 0) out.push({ key: k, bytes: (localStorage.getItem(k) || "").length });
+        if (k === THEME_KEY || k === "sg_ui" || k === "sg_link" || k === ARCHIVE_KEY || k && k.indexOf(DB_KEY) === 0) out.push({ key: k, bytes: (localStorage.getItem(k) || "").length });
       }
     } catch (e) {
     }
@@ -5473,7 +5492,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       }
       return html + "</tr>";
     }
-    function render8() {
+    function render9() {
       while (data.length < minRows) data.push(new Array(cols.length).fill(""));
       let html = '<div class="grid-editor' + (opts.mono ? " mono" : "") + '"><table role="grid" aria-label="' + esc(opts.ariaLabel || "Table") + '"><thead><tr><th class="rn"></th>' + cols.map(function(c) {
         return '<th scope="col">' + esc(c) + "</th>";
@@ -5531,7 +5550,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       if (!res.intercept) return false;
       const placed = placeTable(data, r, c, res.table, cols.length);
       data = placed.rows;
-      render8();
+      render9();
       focusCell(Math.min(r + placed.pastedRows, data.length - 1), c);
       if (opts.onPaste) opts.onPaste({ pastedRows: placed.pastedRows, overflow: placed.overflow + res.dropped, source: res.source, usedSpaceSplit: res.usedSpaceSplit, aligned: res.aligned, dropped: res.dropped });
       changed();
@@ -5554,7 +5573,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         focusCell(Math.max(r - 1, 0), c);
       }
     });
-    render8();
+    render9();
     return {
       getRows: function() {
         return trimRows(data);
@@ -5563,15 +5582,15 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         data = rows.map(function(x) {
           return x.slice();
         });
-        render8();
+        render9();
       },
       clear: function() {
         data = emptyRows(minRows, cols.length);
-        render8();
+        render9();
       },
       addRows: function(n) {
         for (let i = 0; i < n; i++) data.push(new Array(cols.length).fill(""));
-        render8();
+        render9();
       },
       focus: function() {
         focusCell(0, 0);
@@ -6232,10 +6251,10 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     const cap = present.map(function(p) {
       return Math.max(0, p - floorFor(p));
     });
-    const load2 = new Array(n).fill(0), loadC = new Array(n).fill(0), loadF = new Array(n).fill(0);
+    const load3 = new Array(n).fill(0), loadC = new Array(n).fill(0), loadF = new Array(n).fill(0);
     function addLoad(w, a, sign) {
       for (let i = w.start; i < w.end; i++) if (a[i]) {
-        load2[i] += sign;
+        load3[i] += sign;
         if (w.canCIC) loadC[i] += sign;
         if (w.canIF) loadF[i] += sign;
       }
@@ -6259,7 +6278,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         const bp = new Int32Array(S).fill(-1), bt = new Uint8Array(S);
         const topCost = (function() {
           let c = 0;
-          const L = load2[s];
+          const L = load3[s];
           if (L + 1 > cap[s]) c += W.floorShort * (L + 1 - cap[s]);
           else c += W.topImbalance * (2 * L + 1);
           if (w.canCIC && nC[s] - loadC[s] - 1 < 1) c += W.certCover;
@@ -10327,14 +10346,345 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     });
   }
 
-  // src/app/about-ui.js
+  // src/app/link-ui.js
   var $8 = function(id) {
+    return document.getElementById(id);
+  };
+  var LINK_KEY = "sg_link";
+  var DB = "ScheduGen_Link";
+  var STORE = "handles";
+  var KEY = "database";
+  var TYPES = [{ description: "ScheduGen database", accept: { "application/json": [".json"] } }];
+  var SUGGESTED_NAME = "ScheduGen database.json";
+  function linkSupported() {
+    try {
+      return typeof window.showOpenFilePicker === "function" && typeof window.showSaveFilePicker === "function" && typeof window.indexedDB !== "undefined";
+    } catch (e) {
+      return false;
+    }
+  }
+  function withStore(mode, fn) {
+    return new Promise(function(resolve, reject) {
+      let req;
+      try {
+        req = window.indexedDB.open(DB, 1);
+      } catch (e) {
+        reject(e);
+        return;
+      }
+      req.onupgradeneeded = function() {
+        req.result.createObjectStore(STORE);
+      };
+      req.onerror = function() {
+        reject(req.error);
+      };
+      req.onsuccess = function() {
+        const db = req.result, tx = db.transaction(STORE, mode), st = tx.objectStore(STORE);
+        let out;
+        const r = fn(st);
+        if (r) r.onsuccess = function() {
+          out = r.result;
+        };
+        tx.oncomplete = function() {
+          db.close();
+          resolve(out);
+        };
+        tx.onerror = function() {
+          db.close();
+          reject(tx.error);
+        };
+      };
+    });
+  }
+  var getHandle = function() {
+    return withStore("readonly", function(st) {
+      return st.get(KEY);
+    }).catch(function() {
+      return null;
+    });
+  };
+  var putHandle = function(h2) {
+    return withStore("readwrite", function(st) {
+      return st.put(h2, KEY);
+    });
+  };
+  function clearLink() {
+    try {
+      window.localStorage.removeItem(LINK_KEY);
+    } catch (e) {
+    }
+    return linkSupported() ? withStore("readwrite", function(st) {
+      return st.delete(KEY);
+    }).catch(function() {
+    }) : Promise.resolve();
+  }
+  function meta() {
+    try {
+      return JSON.parse(safeGet(LINK_KEY) || "null") || null;
+    } catch (e) {
+      return null;
+    }
+  }
+  function setMeta(m) {
+    safeSet(LINK_KEY, JSON.stringify(m));
+  }
+  var handle = null;
+  var granted = false;
+  var applying = false;
+  function permitted(h2, ask2) {
+    const opts = { mode: "readwrite" };
+    return Promise.resolve(h2.queryPermission ? h2.queryPermission(opts) : "granted").then(function(q) {
+      if (q === "granted" || !ask2) return q === "granted";
+      return h2.requestPermission(opts).then(function(r) {
+        return r === "granted";
+      });
+    }).then(function(ok) {
+      granted = ok;
+      return ok;
+    });
+  }
+  function load2(h2, quiet) {
+    return h2.getFile().then(function(file) {
+      checkBackupFile(file.name, file.size);
+      return file.text().then(function(text) {
+        const parsed = parseBackup(text);
+        applying = true;
+        try {
+          applyBackup(parsed);
+        } finally {
+          applying = false;
+        }
+        setMeta({ name: file.name, synced: file.lastModified, dirty: false });
+        render2();
+        if (!quiet) toast("Loaded " + file.name + " (" + getState().staff.length + " staff).");
+        return true;
+      });
+    });
+  }
+  function write(h2) {
+    applying = true;
+    try {
+      markBackedUp();
+    } finally {
+      applying = false;
+    }
+    const text = JSON.stringify(backupData(), null, 2);
+    return h2.createWritable().then(function(w) {
+      return w.write(text).then(function() {
+        return w.close();
+      });
+    }).then(function() {
+      return h2.getFile();
+    }).then(function(file) {
+      setMeta({ name: file.name, synced: file.lastModified, dirty: false });
+      render2();
+      return file;
+    });
+  }
+  function saveLinked() {
+    if (!handle) return Promise.resolve(false);
+    return permitted(handle, true).then(function(ok) {
+      if (!ok) {
+        toast("ScheduGen was not allowed to save to the database file.", "error");
+        return false;
+      }
+      return handle.getFile().then(function(file) {
+        const m = meta() || {};
+        const changed = m.synced && file.lastModified > m.synced + 1;
+        const go2 = changed ? choose({
+          title: "The database file changed",
+          message: file.name + " was saved by someone else since you loaded it. Load theirs (your changes here are replaced), or replace it with yours?",
+          choices: [{ value: "load", label: "Load theirs" }, { value: "save", label: "Replace with mine", primary: true }],
+          close: "Cancel"
+        }) : Promise.resolve("save");
+        return go2.then(function(v) {
+          if (v === "load") return load2(handle).then(function() {
+            return false;
+          });
+          if (v !== "save") return false;
+          return write(handle).then(function(f) {
+            toast("Saved to " + f.name + ".");
+            return true;
+          });
+        });
+      });
+    }).catch(function(err) {
+      toast("Could not save to the database file: " + err.message, "error");
+      return false;
+    });
+  }
+  function refresh2(userAsked) {
+    if (!handle) return Promise.resolve(false);
+    return permitted(handle, userAsked).then(function(ok) {
+      if (!ok) {
+        render2();
+        return false;
+      }
+      return handle.getFile().then(function(file) {
+        const m = meta() || {};
+        if (!userAsked && m.synced && file.lastModified <= m.synced + 1) {
+          render2();
+          return false;
+        }
+        if (!m.dirty) return load2(handle, !userAsked).then(function() {
+          if (!userAsked) toast("Loaded the latest " + file.name + ".");
+          return true;
+        });
+        return choose({
+          title: "Newer data in the database file",
+          message: file.name + " was saved since this browser last loaded it, and this browser has changes of its own that are not in the file.",
+          choices: [{ value: "load", label: "Load the file" }, { value: "save", label: "Keep mine and save it", primary: true }],
+          close: "Decide later"
+        }).then(function(v) {
+          if (v === "load") return load2(handle);
+          if (v === "save") return saveLinked();
+          render2();
+          return false;
+        });
+      });
+    }).catch(function(err) {
+      toast("Could not open the database file: " + err.message, "error");
+      render2();
+      return false;
+    });
+  }
+  function openExisting() {
+    return window.showOpenFilePicker({ types: TYPES, multiple: false }).then(function(list2) {
+      const h2 = list2[0];
+      return h2.getFile().then(function(file) {
+        if (file.size === 0) return linkTo(h2).then(function() {
+          return write(h2);
+        }).then(function() {
+          toast("Linked " + file.name + " and saved your data to it.");
+          return true;
+        });
+        checkBackupFile(file.name, file.size);
+        return file.text().then(function(text) {
+          const parsed = parseBackup(text);
+          const empty = !getState().staff.length && !getState().currentDay && !Object.keys(getState().history.days).length;
+          const go2 = empty ? Promise.resolve(true) : ask({
+            title: "Load " + file.name + "?",
+            ok: "Load it",
+            danger: true,
+            message: "It holds " + parsed.staff.length + " staff. Its data replaces the data in this browser (a safety copy is kept). From now on ScheduGen opens and saves this file."
+          });
+          return go2.then(function(yes) {
+            if (!yes) return false;
+            return linkTo(h2).then(function() {
+              return load2(h2);
+            });
+          });
+        });
+      });
+    }).catch(function(err) {
+      if (err && err.name !== "AbortError") toast("Could not link the file: " + err.message, "error");
+      return false;
+    });
+  }
+  function createNew() {
+    return window.showSaveFilePicker({ suggestedName: SUGGESTED_NAME, types: TYPES }).then(function(h2) {
+      return linkTo(h2).then(function() {
+        return write(h2);
+      }).then(function(f) {
+        toast("Created " + f.name + " with your data. Save to it when you finish.");
+        return true;
+      });
+    }).catch(function(err) {
+      if (err && err.name !== "AbortError") toast("Could not create the file: " + err.message, "error");
+      return false;
+    });
+  }
+  function linkTo(h2) {
+    handle = h2;
+    granted = true;
+    return putHandle(h2);
+  }
+  function unlink() {
+    return ask({ title: "Unlink the database file?", ok: "Unlink", message: "ScheduGen stops opening and saving the file. The file and the data in this browser are not changed." }).then(function(yes) {
+      if (!yes) return;
+      handle = null;
+      granted = false;
+      return clearLink().then(function() {
+        render2();
+        toast("Unlinked.");
+      });
+    });
+  }
+  function isLinked() {
+    return !!handle;
+  }
+  function firstRunQuestion() {
+    if (!linkSupported() || handle) return Promise.resolve();
+    return choose({
+      title: "Do you have a ScheduGen database file?",
+      message: "A database file keeps staff, settings and schedules in one place, such as a shared OneDrive folder, so everyone works from the same data.",
+      help: WHY,
+      choices: [{ value: "open", label: "Open my file" }, { value: "new", label: "Create one", primary: true }],
+      close: "Not now"
+    }).then(function(v) {
+      if (v === "open") return openExisting();
+      if (v === "new") return createNew();
+    });
+  }
+  var WHY = "Save it in a shared folder such as OneDrive. Each person opens ScheduGen, which loads the latest file, and saves when they finish; the next person starts from there. The browser asks before ScheduGen may open or save the file, and ScheduGen can reach no other file.";
+  function render2() {
+    const box = $8("home-link");
+    if (!box) return;
+    const show2 = linkSupported();
+    box.hidden = !show2;
+    $8("btn-link-save").hidden = !(show2 && handle);
+    if (!show2) return;
+    const m = meta();
+    if (!handle) {
+      box.innerHTML = '<span class="home-link-text"><strong>Database file</strong> ' + qtip(WHY) + '<small>Open or save everything in one shared file.</small></span><span class="home-link-btns"><button type="button" class="btn small" id="link-open">Open a file</button><button type="button" class="btn small" id="link-new">Create one</button></span>';
+      return;
+    }
+    const name = esc(m && m.name || handle.name || SUGGESTED_NAME);
+    const when = m && m.synced ? new Date(m.synced) : null;
+    box.innerHTML = '<span class="home-link-text"><strong>' + name + "</strong> " + qtip(WHY) + "<small>" + (granted ? (when ? "Up to date as of " + esc(when.toLocaleString()) : "Linked") + (m && m.dirty ? ". Changes here are not saved to it yet." : ".") : "Linked. Open it to load the latest.") + '</small></span><span class="home-link-btns">' + (granted ? '<button type="button" class="btn small primary" id="link-save">Save now</button>' : '<button type="button" class="btn small primary" id="link-refresh">Open ' + name + "</button>") + '<button type="button" class="btn small" id="link-unlink">Unlink</button></span>';
+  }
+  function initLinkUI() {
+    if (!linkSupported()) {
+      render2();
+      return Promise.resolve();
+    }
+    document.addEventListener("sg-saved", function() {
+      if (applying || !handle) return;
+      const m = meta();
+      if (m && !m.dirty) {
+        m.dirty = true;
+        setMeta(m);
+        render2();
+      }
+    });
+    $8("home-link").addEventListener("click", function(e) {
+      const id = e.target.id;
+      if (id === "link-open") openExisting().then(render2);
+      else if (id === "link-new") createNew().then(render2);
+      else if (id === "link-save") saveLinked().then(render2);
+      else if (id === "link-refresh") refresh2(true).then(render2);
+      else if (id === "link-unlink") unlink();
+    });
+    $8("btn-link-save").addEventListener("click", function() {
+      saveLinked();
+    });
+    onShow("view-home", render2);
+    return getHandle().then(function(h2) {
+      handle = h2 || null;
+      render2();
+      return handle ? refresh2(false) : null;
+    });
+  }
+
+  // src/app/about-ui.js
+  var $9 = function(id) {
     return document.getElementById(id);
   };
   function describe2(key) {
     if (key === DB_KEY) return "Your data: staff, settings, CIC list, the current schedule" + (extras.full ? " and the history of finalized days" : "");
     if (key === THEME_KEY) return "Your choice of light or dark theme (Preferences, or the Light or dark button)";
     if (key === ARCHIVE_KEY) return extras.full ? "Past days: the full schedules of finalized and imported days (at most 104)" : "Other ScheduGen data (not used by this page)";
+    if (key === "sg_link") return "The linked database file: its name and when it was last opened or saved (the link itself is kept in this browser's IndexedDB)";
     if (key === "sg_ui") return "Screen preferences: menu open or collapsed, " + (extras.full ? "history on or off, " : "") + "fit the schedule to the window, code buttons, the side panel pinned and its split, whether the tour was seen, and the colour, font style, text size and motion chosen on Preferences";
     if (key.indexOf(DB_KEY + "_before_restore_") === 0) return "Safety copy of the data that was replaced when a backup was restored";
     if (key.indexOf(DB_KEY + "_unreadable_") === 0) return "Safety copy of saved data that could not be read";
@@ -10343,23 +10693,23 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   function size(bytes) {
     return bytes < 1024 ? bytes + " characters" : Math.round(bytes / 102.4) / 10 + " thousand characters";
   }
-  function render2() {
+  function render3() {
     const keys = ownedKeys();
     const st = getState();
-    $8("about-stored").innerHTML = keys.length ? '<div class="table-container"><table><thead><tr><th>What</th><th>Stored under</th><th class="num">Size</th></tr></thead><tbody>' + keys.map(function(k) {
+    $9("about-stored").innerHTML = keys.length ? '<div class="table-container"><table><thead><tr><th>What</th><th>Stored under</th><th class="num">Size</th></tr></thead><tbody>' + keys.map(function(k) {
       return "<tr><td>" + esc(describe2(k.key)) + '</td><td class="mono">' + esc(k.key) + '</td><td class="num">' + esc(size(k.bytes)) + "</td></tr>";
     }).join("") + "</tbody></table></div>" : '<p class="muted">Nothing is stored in this browser yet.</p>';
-    $8("about-counts").textContent = st.staff.length + " staff, " + extras.about.map(function(f) {
+    $9("about-counts").textContent = st.staff.length + " staff, " + extras.about.map(function(f) {
       return f(st) + ", ";
     }).join("") + (st.currentDay ? "one schedule in progress" : "no schedule in progress") + ". Data version " + SCHEMA_VERSION + ".";
-    $8("about-delete").disabled = !keys.length;
+    $9("about-delete").disabled = !keys.length;
   }
   function initAboutUI() {
-    $8("about-export").addEventListener("click", function() {
+    $9("about-export").addEventListener("click", function() {
       exportBackup();
-      render2();
+      render3();
     });
-    $8("about-delete").addEventListener("click", function() {
+    $9("about-delete").addEventListener("click", function() {
       const n = ownedKeys().length;
       if (!n) return;
       ask({
@@ -10372,13 +10722,15 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         if (!yes) return;
         if (!deleteAllStored()) {
           toast("The browser did not allow the data to be removed. Nothing else was changed.", "error");
-          render2();
+          render3();
           return;
         }
-        location.reload();
+        clearLink().then(function() {
+          location.reload();
+        });
       });
     });
-    onShow("view-about", render2);
+    onShow("view-about", render3);
   }
 
   // src/app/tour.js
@@ -10683,52 +11035,55 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     go(0, 1);
     state2.frame = window.requestAnimationFrame(tick2);
   }
-  function initTour() {
+  function initTour(first2) {
     const btn = document.getElementById("btn-tour");
     if (btn) btn.addEventListener("click", startTour);
-    if (!tourSeen() && !hasData() && storageWorks()) startTour();
+    if (!tourSeen() && !hasData() && storageWorks()) Promise.resolve(first2 ? first2() : null).catch(function() {
+    }).then(function() {
+      if (!tourSeen()) startTour();
+    });
   }
 
   // src/app/home-ui.js
-  var $9 = function(id) {
+  var $10 = function(id) {
     return document.getElementById(id);
   };
-  function render3() {
+  function render4() {
     const c = getState().currentDay;
-    const btn = $9("home-continue");
+    const btn = $10("home-continue");
     btn.hidden = !c;
     if (c) {
       const people = (c.people || []).filter(function(p) {
         return p.end > p.start;
       }).length;
-      $9("home-continue-sub").innerHTML = esc((c.date || c.title || "The schedule in progress") + (people ? ", " + people + " people" : "") + (c.edits ? ", " + c.edits + " edit" + (c.edits === 1 ? "" : "s") : ""));
+      $10("home-continue-sub").innerHTML = esc((c.date || c.title || "The schedule in progress") + (people ? ", " + people + " people" : "") + (c.edits ? ", " + c.edits + " edit" + (c.edits === 1 ? "" : "s") : ""));
     }
   }
   function initHomeUI() {
-    $9("home-continue").addEventListener("click", function() {
+    $10("home-continue").addEventListener("click", function() {
       navigate("view-schedule");
     });
-    $9("home-new").addEventListener("click", function() {
+    $10("home-new").addEventListener("click", function() {
       navigate("view-import");
     });
-    $9("home-config").addEventListener("click", function() {
+    $10("home-config").addEventListener("click", function() {
       navigate("view-config");
     });
-    $9("home-prefs").addEventListener("click", function() {
+    $10("home-prefs").addEventListener("click", function() {
       navigate("view-prefs");
     });
-    $9("home-tour").addEventListener("click", startTour);
-    onShow("view-home", render3);
+    $10("home-tour").addEventListener("click", startTour);
+    onShow("view-home", render4);
     onNavigate(function(view) {
-      $9("appbar").hidden = view === "view-home";
+      $10("appbar").hidden = view === "view-home";
     });
     document.addEventListener("sg-saved", function() {
-      if ($9("view-home").classList.contains("active")) render3();
+      if ($10("view-home").classList.contains("active")) render4();
     });
   }
 
   // src/app/prefs-ui.js
-  var $10 = function(id) {
+  var $11 = function(id) {
     return document.getElementById(id);
   };
   var PALETTE_NAMES = { sage: "Sage", harbor: "Harbor", heather: "Heather", ember: "Ember" };
@@ -10764,9 +11119,9 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   function radio(name, value, checked, label, extra) {
     return '<label class="pref-choice' + (extra && extra.cls ? " " + extra.cls : "") + '"' + (extra && extra.attrs ? " " + extra.attrs : "") + '><input type="radio" name="' + name + '" value="' + value + '"' + (checked ? " checked" : "") + "> " + label + "</label>";
   }
-  function render4() {
+  function render5() {
     const p = prefs(), t = themeChoice();
-    $10("prefs-root").innerHTML = '<section class="cfg-section"><h2>Theme</h2><div class="pref-row" role="radiogroup" aria-label="Theme">' + ["system", "light", "dark"].map(function(v) {
+    $11("prefs-root").innerHTML = '<section class="cfg-section"><h2>Theme</h2><div class="pref-row" role="radiogroup" aria-label="Theme">' + ["system", "light", "dark"].map(function(v) {
       return radio("pref-theme", v, t === v, v === "system" ? "Follow the computer" : v === "light" ? "Light" : "Dark");
     }).join("") + '</div></section><section class="cfg-section"><h2>Colour</h2><p class="hint">Each colour has a light and a dark version, and keeps every text readable.</p><div class="pref-row swatches" role="radiogroup" aria-label="Colour">' + PALETTES.map(function(v) {
       return radio("pref-palette", v, p.palette === v, '<span class="pal-swatch" data-palette="' + v + '" aria-hidden="true"><i></i><b></b></span><span><strong>' + PALETTE_NAMES[v] + "</strong><small>" + PALETTE_HINTS[v] + "</small></span>", { cls: "swatch-choice" });
@@ -10786,19 +11141,19 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     if (e.target.id !== "pref-size") return;
     const v = Math.round(Number(e.target.value)) / 100;
     setPref("textScale", Math.min(TEXT_MAX, Math.max(TEXT_MIN, v)));
-    $10("pref-size-out").textContent = Math.round(prefs().textScale * 100) + "%";
+    $11("pref-size-out").textContent = Math.round(prefs().textScale * 100) + "%";
     applyLook();
   }
   function initPrefsUI() {
-    const root = $10("prefs-root");
+    const root = $11("prefs-root");
     root.addEventListener("change", onChange2);
     root.addEventListener("input", onInput);
     root.addEventListener("click", function(e) {
       if (e.target.id === "pref-size-reset") {
         setPref("textScale", 1);
         applyLook();
-        render4();
-        $10("pref-size").focus();
+        render5();
+        $11("pref-size").focus();
       }
       if (e.target.id === "pref-reset") {
         setPref("palette", "sage");
@@ -10807,15 +11162,15 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         setPref("motion", "system");
         setTheme("system");
         applyLook();
-        render4();
+        render5();
         toast("Preferences reset.");
       }
     });
-    onShow("view-prefs", render4);
+    onShow("view-prefs", render5);
     document.getElementById("btn-theme").addEventListener("click", function() {
-      if ($10("view-prefs").classList.contains("active")) render4();
+      if ($11("view-prefs").classList.contains("active")) render5();
     });
-    render4();
+    render5();
   }
 
   // src/app/app.js
@@ -10886,7 +11241,10 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       toast(age === null ? "No backup has been made yet. Browser storage can be cleared, so keep a backup file." : "The last backup is " + age + " days old.", "info", { label: "Export backup", run: exportBackup });
     }
     navigate("view-home");
-    initTour();
+    initLinkUI().catch(function() {
+    }).then(function() {
+      initTour(firstRunQuestion);
+    });
   }
   function start(install) {
     window.ScheduGen = { edition: install ? "full" : "basic", schema: SCHEMA_VERSION, getState, config, dayPlan };
@@ -11251,7 +11609,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   }
 
   // src/app/history-ui.js
-  var $11 = function(id) {
+  var $12 = function(id) {
     return document.getElementById(id);
   };
   var h = function(n) {
@@ -11259,7 +11617,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   };
   function finalizeWorkingDay() {
     const st = getState(), c = st.currentDay;
-    const status = $11("sched-status");
+    const status = $12("sched-status");
     if (!c) return Promise.resolve(false);
     if (!c.date) {
       toast("This schedule has no date, so it cannot be finalized. Set the date on Shifts and generate again.", "error");
@@ -11303,26 +11661,26 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   function renderDays() {
     const days = getState().history.days, keys = Object.keys(days).sort().reverse();
     const c = getState().currentDay;
-    $11("hist-finalize").innerHTML = c && c.date ? "<p>Current schedule: <strong>" + esc(c.date) + "</strong> " + (days[c.date] ? "(finalized)" : "(not finalized)") + ' <button type="button" class="btn small" id="hist-fin-btn">' + (days[c.date] ? "Finalize again" : "Finalize") + "</button></p>" : '<p class="muted">There is no schedule to finalize.</p>';
-    const fb = $11("hist-fin-btn");
+    $12("hist-finalize").innerHTML = c && c.date ? "<p>Current schedule: <strong>" + esc(c.date) + "</strong> " + (days[c.date] ? "(finalized)" : "(not finalized)") + ' <button type="button" class="btn small" id="hist-fin-btn">' + (days[c.date] ? "Finalize again" : "Finalize") + "</button></p>" : '<p class="muted">There is no schedule to finalize.</p>';
+    const fb = $12("hist-fin-btn");
     if (fb) fb.addEventListener("click", function() {
       finalizeWorkingDay().then(renderAll2);
     });
     const arch = loadArchive();
     const all = Object.keys(Object.assign({}, days, arch.days)).sort().reverse();
     const over = overKeep(arch);
-    $11("hist-archive-note").innerHTML = over ? '<div class="notice warn">' + over + " past day" + (over === 1 ? " is" : "s are") + " over the " + KEEP + " kept. The oldest are removed once there are more than " + HARD + " (you are asked first). Export past days to keep a copy.</div>" : "";
-    $11("hist-days").innerHTML = all.length ? '<div class="table-container scroll"><table class="past-days"><thead><tr><th>Date</th><th>From</th><th class="num">People</th><th>Full schedule</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody>' + all.map(function(k) {
+    $12("hist-archive-note").innerHTML = over ? '<div class="notice warn">' + over + " past day" + (over === 1 ? " is" : "s are") + " over the " + KEEP + " kept. The oldest are removed once there are more than " + HARD + " (you are asked first). Export past days to keep a copy.</div>" : "";
+    $12("hist-days").innerHTML = all.length ? '<div class="table-container scroll"><table class="past-days"><thead><tr><th>Date</th><th>From</th><th class="num">People</th><th>Full schedule</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody>' + all.map(function(k) {
       const e = arch.days[k];
       const n = e ? e.people.length : Object.keys(days[k].hours).length;
       return '<tr><td class="mono">' + esc(k) + "</td><td>" + (e ? e.source === "imported" ? "Imported" : "Finalized" : "Finalized") + '</td><td class="num">' + n + "</td><td>" + (e ? "Kept" : '<span class="muted">Hours only</span>') + '</td><td class="rowbtns">' + (e ? '<button type="button" class="btn small" data-view-day="' + esc(k) + '">View</button>' : "") + '<button type="button" class="btn small danger" data-rm="' + esc(k) + '" aria-label="Remove ' + esc(k) + '">Remove</button></td></tr>';
     }).join("") + "</tbody></table></div>" : '<p class="muted">Nothing has been finalized or imported yet.</p>';
-    $11("hist-days").querySelectorAll("[data-view-day]").forEach(function(b) {
+    $12("hist-days").querySelectorAll("[data-view-day]").forEach(function(b) {
       b.addEventListener("click", function() {
         viewPast(b.dataset.viewDay);
       });
     });
-    $11("hist-days").querySelectorAll("[data-rm]").forEach(function(b) {
+    $12("hist-days").querySelectorAll("[data-rm]").forEach(function(b) {
       b.addEventListener("click", function() {
         const date = b.dataset.rm;
         ask({ title: "Remove this past day?", danger: true, ok: "Remove " + date, message: "The hours recorded for " + date + " will no longer count for currency or fairness, and its full schedule is removed." }).then(function(yes) {
@@ -11339,9 +11697,9 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     });
   }
   function renderCurrency() {
-    const st = getState(), ym = $11("hist-month").value;
+    const st = getState(), ym = $12("hist-month").value;
     if (!/^\d{4}-\d{2}$/.test(ym)) {
-      $11("hist-currency").innerHTML = "";
+      $12("hist-currency").innerHTML = "";
       return;
     }
     const hist = monthHours(st.history, ym);
@@ -11351,7 +11709,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       return a.initials < b.initials ? -1 : 1;
     });
     if (!people.length) {
-      $11("hist-currency").innerHTML = '<p class="muted">No staff yet.</p>';
+      $12("hist-currency").innerHTML = '<p class="muted">No staff yet.</p>';
       return;
     }
     const today = localDate(), thisMonth = monthOf(today);
@@ -11376,8 +11734,8 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       return "<tr><td><strong>" + esc(s.initials) + '</strong> <span class="muted small">' + esc(s.role) + "</span></td>" + cell("PF") + cell("IF") + cell("FD") + '<td class="num' + short(x.total.have, x.total.need) + '">' + h(x.total.have) + " of " + h(x.total.need) + '</td><td class="num">' + h((hist[s.initials] || {}).CIC || 0) + '</td><td class="' + (!x.flagged && !x.ok && late ? "bad" : "") + '">' + esc(state3) + '</td><td><button type="button" class="btn small" data-ok="' + esc(s.initials) + '" aria-label="' + (x.flagged ? "Clear the current mark for " : "Mark current: ") + esc(s.initials) + '">' + (x.flagged ? "Clear mark" : "Mark current") + "</button></td></tr>";
     });
     const lead = future ? "This month has not started." : late ? shortCount + " of " + people.length + " people are short for " + ym + "." : "Hours so far in " + ym + ". Being short early in the month is normal; it is flagged in the last " + promptDays + " days.";
-    $11("hist-currency").innerHTML = '<p class="small">' + esc(lead) + '</p><div class="table-container scroll"><table class="currency"><thead><tr><th>Person</th><th class="num">PF</th><th class="num">IF</th><th class="num">FD</th><th class="num">Total off CIC</th><th class="num">CIC</th><th>Status</th><th><span class="sr-only">Action</span></th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div><p class="hint small">Hours this month against the monthly requirement (supervisors need half). Only positions a person is certified on are required. "Mark current" records that the person is current for the month without keying in every shift.</p>';
-    $11("hist-currency").querySelectorAll("[data-ok]").forEach(function(b) {
+    $12("hist-currency").innerHTML = '<p class="small">' + esc(lead) + '</p><div class="table-container scroll"><table class="currency"><thead><tr><th>Person</th><th class="num">PF</th><th class="num">IF</th><th class="num">FD</th><th class="num">Total off CIC</th><th class="num">CIC</th><th>Status</th><th><span class="sr-only">Action</span></th></tr></thead><tbody>' + rows.join("") + '</tbody></table></div><p class="hint small">Hours this month against the monthly requirement (supervisors need half). Only positions a person is certified on are required. "Mark current" records that the person is current for the month without keying in every shift.</p>';
+    $12("hist-currency").querySelectorAll("[data-ok]").forEach(function(b) {
       b.addEventListener("click", function() {
         const rec = getState().staff.find(function(s) {
           return s.initials === b.dataset.ok;
@@ -11401,7 +11759,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   }
   var pending = null;
   function renderImport(r) {
-    const out = $11("hist-import-preview");
+    const out = $12("hist-import-preview");
     if (!r) {
       out.innerHTML = "";
       return;
@@ -11417,22 +11775,22 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     }
     out.innerHTML = html;
     if (!r.day) return;
-    $11("hist-import-save").addEventListener("click", saveImport);
-    $11("hist-import-view").addEventListener("click", function() {
+    $12("hist-import-save").addEventListener("click", saveImport);
+    $12("hist-import-view").addEventListener("click", function() {
       navigate("view-schedule");
       showPastDay(Object.assign({}, expandEntry(compactDay(pending.day, pending.date, "imported"), getState().staff), { title: "Preview of " + pending.date + " (not kept yet)" }));
     });
-    $11("hist-import-cancel").addEventListener("click", function() {
+    $12("hist-import-cancel").addEventListener("click", function() {
       pending = null;
       renderImport(null);
     });
   }
   function onDayPaste(e) {
     e.preventDefault();
-    const date = $11("hist-import-date").value;
+    const date = $12("hist-import-date").value;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       toast("Choose the date of that day first.", "error");
-      $11("hist-import-date").focus();
+      $12("hist-import-date").focus();
       return;
     }
     const cd = e.clipboardData;
@@ -11533,23 +11891,23 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   }
   function initHistoryUI() {
     onShow("view-history", function() {
-      if (!$11("hist-month").value) $11("hist-month").value = monthOf(localDate());
+      if (!$12("hist-month").value) $12("hist-month").value = monthOf(localDate());
       renderAll2();
     });
-    $11("hist-month").addEventListener("change", renderCurrency);
-    $11("hist-paste").addEventListener("paste", onDayPaste);
-    $11("hist-paste").addEventListener("keydown", function(e) {
+    $12("hist-month").addEventListener("change", renderCurrency);
+    $12("hist-paste").addEventListener("paste", onDayPaste);
+    $12("hist-paste").addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         toast("Press Ctrl+V to paste the day tab here.", "info");
       }
     });
-    $11("hist-export").addEventListener("click", exportPast);
-    $11("hist-import-file-btn").addEventListener("click", function() {
-      $11("hist-import-file").click();
+    $12("hist-export").addEventListener("click", exportPast);
+    $12("hist-import-file-btn").addEventListener("click", function() {
+      $12("hist-import-file").click();
     });
-    $11("hist-import-file").addEventListener("change", importPast);
-    if (!$11("hist-import-date").value) $11("hist-import-date").value = localDate();
+    $12("hist-import-file").addEventListener("change", importPast);
+    if (!$12("hist-import-date").value) $12("hist-import-date").value = localDate();
     void noticeList;
   }
 
@@ -12335,11 +12693,10 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   }
 
   // src/app/reports-ui.js
-  var $12 = function(id) {
+  var $13 = function(id) {
     return document.getElementById(id);
   };
   var SVG = "http://www.w3.org/2000/svg";
-  var NAMES = { IF: "IF", CIC: "CIC", PF: "PF", ALL: "ALL", FD: "FD" };
   var current2 = null;
   var currentCur = null;
   var currentWho = null;
@@ -12367,7 +12724,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     return "M" + x + "," + (y + h2) + "v" + (r - h2) + "a" + r + "," + r + " 0 0 1 " + r + "," + -r + "h" + (w - 2 * r) + "a" + r + "," + r + " 0 0 1 " + r + "," + r + "v" + (h2 - r) + "z";
   }
   function tip() {
-    return $12("rep-tip");
+    return $13("rep-tip");
   }
   function showTip(evt, lines) {
     const t = tip();
@@ -12421,10 +12778,11 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     if (!persons.length) return;
     const rowH = 26, bar = 16, left = 64, right = 56, top = 8, width = Math.max(420, host.clientWidth || 720);
     const plotW = width - left - right, height = top + persons.length * rowH + 28;
-    const max = niceMax(Math.max.apply(null, persons.map(function(p) {
-      return p.position;
-    })));
-    const svg = el("svg", { width, height, viewBox: "0 0 " + width + " " + height, role: "img", "aria-label": "Hours on position by person; the same values are in the table below" });
+    const total = function(p) {
+      return p.position + (p.TOP || 0);
+    };
+    const max = niceMax(Math.max.apply(null, persons.map(total)));
+    const svg = el("svg", { width, height, viewBox: "0 0 " + width + " " + height, role: "img", "aria-label": "Hours on position and TOP by person; the same values are in the table below" });
     for (let k = 0; k <= 4; k++) {
       const x = left + plotW * k / 4;
       svg.appendChild(el("line", { x1: x, x2: x, y1: top, y2: height - 22, class: "grid" }));
@@ -12432,12 +12790,12 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     }
     persons.forEach(function(p, i) {
       const y = top + i * rowH + (rowH - bar) / 2;
-      const g2 = el("g", { tabindex: "0", class: "row", role: "listitem", "aria-label": p.id + ": " + POSITIONS2.map(function(k) {
-        return NAMES[k] + " " + h1(p[k]) + " h";
-      }).join(", ") + ", total " + h1(p.position) + " h" });
+      const g2 = el("g", { tabindex: "0", class: "row", role: "listitem", "aria-label": p.id + ": " + RING.map(function(k) {
+        return RING_NAMES[k] + " " + h1(p[k] || 0) + " h";
+      }).join(", ") + ", total " + h1(total(p)) + " h" });
       g2.appendChild(el("rect", { x: 0, y: top + i * rowH, width, height: rowH, class: "hit" }));
       let x = left;
-      const parts = POSITIONS2.filter(function(k) {
+      const parts = RING.filter(function(k) {
         return p[k] > 0;
       });
       parts.forEach(function(k, j) {
@@ -12449,7 +12807,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         x += w;
       });
       g2.appendChild(el("text", { x: left - 8, y: y + bar / 2 + 4, class: "label", "text-anchor": "end" }, p.id));
-      g2.appendChild(el("text", { x: x + 6, y: y + bar / 2 + 4, class: "value" }, h1(p.position)));
+      g2.appendChild(el("text", { x: x + 6, y: y + bar / 2 + 4, class: "value" }, h1(total(p))));
       g2.addEventListener("click", function() {
         openRing(host, svg, p, { x: left, y, w: x - left, h: bar });
       });
@@ -12459,11 +12817,11 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
           openRing(host, svg, p, { x: left, y, w: x - left, h: bar });
         }
       });
-      hover(g2, [{ head: p.id + " (" + p.role + ", " + p.days + " day" + (p.days === 1 ? "" : "s") + ")", value: h1(p.position) + " h", label: "on position" }].concat(POSITIONS2.filter(function(k) {
+      hover(g2, [{ head: p.id + " (" + p.role + ", " + p.days + " day" + (p.days === 1 ? "" : "s") + ")", value: h1(p.position) + " h", label: "on position" }].concat(RING.filter(function(k) {
         return p[k] > 0;
       }).map(function(k) {
-        return { key: k, value: h1(p[k]) + " h", label: NAMES[k] };
-      })).concat(p.TOP ? [{ value: h1(p.TOP) + " h", label: "TOP" }] : []).concat(p.training ? [{ value: h1(p.training) + " h", label: "training" }] : []));
+        return { key: k, value: h1(p[k]) + " h", label: RING_NAMES[k] };
+      })).concat(p.training ? [{ value: h1(p.training) + " h", label: "training" }] : []));
       svg.appendChild(g2);
     });
     host.appendChild(svg);
@@ -12474,6 +12832,13 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   var ease = function(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   };
+  function curvePoint(geo, t, f) {
+    const L0 = geo.from.w, L = L0 + (2 * Math.PI * geo.r - L0) * t, theta = Math.max(1e-4, 2 * Math.PI * t), R = L / theta;
+    const mx = geo.from.x + L0 / 2 + (geo.cx - (geo.from.x + L0 / 2)) * t;
+    const my = geo.from.y + geo.from.h / 2 + (geo.cy - geo.r - (geo.from.y + geo.from.h / 2)) * t;
+    const ang = -Math.PI / 2 + (f - 0.5) * theta;
+    return { x: mx + R * Math.cos(ang), y: my + R + R * Math.sin(ang), nx: Math.cos(ang), ny: Math.sin(ang) };
+  }
   function bentPath(geo, t, a, b) {
     const L0 = geo.from.w, L1 = 2 * Math.PI * geo.r;
     const L = L0 + (L1 - L0) * t;
@@ -12510,15 +12875,21 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     return { parts, total };
   }
   function drawRing(geo, parts, t, svg) {
-    svg.querySelectorAll("path.ring").forEach(function(e) {
+    svg.querySelectorAll(".ring, .gapline").forEach(function(e) {
       e.remove();
     });
     const thick = geo.from.h + (geo.thick - geo.from.h) * t;
+    const layer = svg.firstChild;
     parts.parts.forEach(function(x) {
-      const gap = 1 / Math.max(1, geo.from.w + (2 * Math.PI * geo.r - geo.from.w) * t);
-      const a = x.a + (x.a > 0 ? gap : 0), b = x.b - (x.b < 1 ? gap : 0);
-      if (b <= a) return;
-      svg.insertBefore(el("path", { d: bentPath(geo, t, a, b), class: "ring ring-" + x.k, "stroke-width": thick.toFixed(2), "stroke-linecap": "butt" }), svg.firstChild);
+      svg.insertBefore(el("path", { d: bentPath(geo, t, x.a, x.b), class: "ring ring-" + x.k, "stroke-width": thick.toFixed(2), "stroke-linecap": "butt" }), layer);
+    });
+    const cuts = parts.parts.slice(1).map(function(x) {
+      return x.a;
+    });
+    if (parts.parts.length > 1 && t > 0.98) cuts.push(0);
+    cuts.forEach(function(f) {
+      const c = curvePoint(geo, t, f), h2 = thick / 2 + 1;
+      svg.insertBefore(el("line", { x1: (c.x - c.nx * h2).toFixed(2), y1: (c.y - c.ny * h2).toFixed(2), x2: (c.x + c.nx * h2).toFixed(2), y2: (c.y + c.ny * h2).toFixed(2), class: "gapline" }), layer);
     });
   }
   function callouts(geo, parts, layer) {
@@ -12579,50 +12950,70 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     });
     const front = el("g", { class: "fade-in" });
     front.appendChild(el("text", { x: geo.cx, y: geo.cy - 4, class: "center-big", "text-anchor": "middle" }, h1(parts.total) + " h"));
-    front.appendChild(el("text", { x: geo.cx, y: geo.cy + 16, class: "center-small", "text-anchor": "middle" }, p.id + ", TOP included"));
+    front.appendChild(el("text", { x: geo.cx, y: geo.cy + 16, class: "center-small", "text-anchor": "middle" }, p.id));
     callouts(geo, parts, front);
     svg.appendChild(front);
     host.style.height = barH + "px";
     host.appendChild(svg);
-    bars.classList.add("bars-out");
     ring = { host, bars, svg, geo, parts, p, raf: null };
-    $12("rep-ring-bar").hidden = false;
-    $12("rep-legend").hidden = true;
-    $12("rep-ring-note").textContent = p.id + " (" + p.role + ", " + p.days + " day" + (p.days === 1 ? "" : "s") + ")";
+    const others = barParts(bars, p);
+    others.row.style.visibility = "hidden";
+    others.rest.forEach(function(e) {
+      e.style.transition = "opacity .25s ease";
+      e.style.opacity = "0";
+    });
+    $13("rep-ring-bar").hidden = false;
+    $13("rep-legend").hidden = true;
+    $13("rep-ring-note").textContent = p.id + " (" + p.role + ", " + p.days + " day" + (p.days === 1 ? "" : "s") + ")";
     void host.offsetHeight;
     host.style.height = H + "px";
-    bars.style.opacity = "0";
     ring.raf = animate(0, 1, 650, function(t) {
       drawRing(geo, parts, t, svg);
     }, function() {
       front.classList.add("on");
-      $12("rep-ring-back").focus();
+      $13("rep-ring-back").focus();
     });
+  }
+  function barParts(bars, p) {
+    const row = [].filter.call(bars.querySelectorAll("g.row"), function(g2) {
+      return g2.getAttribute("aria-label").indexOf(p.id + ":") === 0;
+    })[0];
+    return { row, rest: [].filter.call(bars.children, function(e) {
+      return e !== row;
+    }) };
   }
   function closeRing(instant) {
     if (!ring) return;
     const r = ring;
     cancelAnimationFrame(r.raf);
+    const parts = barParts(r.bars, r.p);
     r.svg.querySelector(".fade-in").classList.remove("on");
     const finish = function() {
       r.svg.remove();
-      r.bars.style.opacity = "";
-      r.bars.classList.remove("bars-out");
+      parts.row.style.visibility = "";
       r.host.style.height = "";
-      $12("rep-ring-bar").hidden = true;
-      $12("rep-legend").hidden = false;
+      $13("rep-ring-bar").hidden = true;
+      $13("rep-legend").hidden = false;
       ring = null;
-      const row = [].filter.call(r.bars.querySelectorAll("g.row"), function(g2) {
-        return g2.getAttribute("aria-label").indexOf(r.p.id + ":") === 0;
-      })[0];
-      if (row && !instant) row.focus();
+      parts.rest.forEach(function(e) {
+        if (instant || !motionOK()) {
+          e.style.transition = "";
+          e.style.opacity = "";
+          return;
+        }
+        e.style.transition = "opacity .3s ease";
+        e.style.opacity = "1";
+        setTimeout(function() {
+          e.style.transition = "";
+          e.style.opacity = "";
+        }, 350);
+      });
+      if (!instant) parts.row.focus();
     };
     if (instant) {
       finish();
       return;
     }
-    r.host.style.height = r.bars.getAttribute("height") + "px";
-    r.bars.style.opacity = "1";
     r.raf = animate(1, 0, 500, function(t) {
       drawRing(r.geo, r.parts, t, r.svg);
     }, finish);
@@ -12676,7 +13067,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     host.appendChild(t);
   }
   function tiles(s) {
-    const host = $12("rep-tiles");
+    const host = $13("rep-tiles");
     host.textContent = "";
     [["Days", s.totals.days], ["Hours on position", h1(s.totals.onPosition)], ["Days with no problems", s.totals.cleanDays + " of " + s.totals.days], ["Training hours", h1(s.totals.training)]].forEach(function(t) {
       const d = document.createElement("div");
@@ -12692,17 +13083,17 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       host.appendChild(d);
     });
   }
-  function render5() {
-    const preset = $12("rep-range").value;
+  function render6() {
+    const preset = $13("rep-range").value;
     const arch = loadArchive(), all = datesOf(arch);
     const dates = inRange2(all, preset, localDate(), addDays);
     const has = dates.length > 0;
-    $12("rep-empty").hidden = has;
-    $12("rep-body").hidden = !has;
-    $12("rep-export").disabled = !has;
-    $12("rep-print").disabled = !has;
+    $13("rep-empty").hidden = has;
+    $13("rep-body").hidden = !has;
+    $13("rep-export").disabled = !has;
+    $13("rep-print").disabled = !has;
     if (!has) {
-      $12("rep-empty-text").textContent = all.length ? "No past days in this range. Choose a longer range." : "No past days yet. Finalize a schedule, or add a past day from Excel on History and currency.";
+      $13("rep-empty-text").textContent = all.length ? "No past days in this range. Choose a longer range." : "No past days yet. Finalize a schedule, or add a past day from Excel on History and currency.";
       current2 = null;
       return;
     }
@@ -12713,23 +13104,23 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       } };
     }));
     current2 = { summary: s, from: dates[0], to: dates[dates.length - 1], preset };
-    $12("rep-range-text").textContent = dates[0] === dates[dates.length - 1] ? dates[0] : dates[0] + " to " + dates[dates.length - 1];
+    $13("rep-range-text").textContent = dates[0] === dates[dates.length - 1] ? dates[0] : dates[0] + " to " + dates[dates.length - 1];
     tiles(s);
     const tbl = reportTables(s);
-    personChart($12("rep-chart-person"), s.persons);
-    table($12("rep-table-person"), tbl.persons);
-    dayChart($12("rep-chart-problems"), s.days, "problems", "Problems found", "problems");
-    table($12("rep-table-days"), tbl.days);
-    $12("rep-legend").textContent = "";
-    POSITIONS2.forEach(function(k) {
+    personChart($13("rep-chart-person"), s.persons);
+    table($13("rep-table-person"), tbl.persons);
+    dayChart($13("rep-chart-problems"), s.days, "problems", "Problems found", "problems");
+    table($13("rep-table-days"), tbl.days);
+    $13("rep-legend").textContent = "";
+    RING.forEach(function(k) {
       const it = document.createElement("span");
       it.className = "legend-item";
       const sw = document.createElement("span");
       sw.className = "swatch";
       sw.style.background = "var(--series-" + k + ")";
       it.appendChild(sw);
-      it.appendChild(document.createTextNode(NAMES[k]));
-      $12("rep-legend").appendChild(it);
+      it.appendChild(document.createTextNode(RING_NAMES[k]));
+      $13("rep-legend").appendChild(it);
     });
   }
   function lineChart(host, spec) {
@@ -12891,10 +13282,10 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     if (colour) sw.style.background = colour;
     it.appendChild(sw);
     it.appendChild(document.createTextNode(text));
-    $12("rep-cur-legend").appendChild(it);
+    $13("rep-cur-legend").appendChild(it);
   }
   function fillWho(cp) {
-    const sel = $12("rep-cur-who"), keep = sel.value;
+    const sel = $13("rep-cur-who"), keep = sel.value;
     while (sel.options.length > 1) sel.remove(1);
     (cp ? cp.people : []).forEach(function(p) {
       const o = document.createElement("option");
@@ -12910,7 +13301,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     }) : null;
   }
   function renderCurrency2() {
-    const ym = $12("rep-month").value;
+    const ym = $13("rep-month").value;
     if (!/^\d{4}-\d{2}$/.test(ym)) return;
     const st = getState(), cfg = deepMerge(DEFAULT_CONFIG, st.config || {}).currency;
     const today = localDate(), monthDays = new Date(+ym.slice(0, 4), +ym.slice(5, 7), 0).getDate();
@@ -12919,23 +13310,23 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     currentCur = cp;
     const p = fillWho(cp);
     currentWho = p;
-    $12("rep-cur-hint-all").hidden = !!p;
-    $12("rep-cur-hint-one").hidden = !p;
-    $12("rep-cur-sum").textContent = p ? p.id + ", day by day" : "Who reached it, and when";
+    $13("rep-cur-hint-all").hidden = !!p;
+    $13("rep-cur-hint-one").hidden = !p;
+    $13("rep-cur-sum").textContent = p ? p.id + ", day by day" : "Who reached it, and when";
     const noLines = p && !CURRENCY_LINES.some(function(k) {
       return p.need[k] !== null;
     });
     const empty = !cp || !cp.recordedDays;
-    $12("rep-cur-empty").hidden = !empty && !noLines;
-    $12("rep-cur-empty").textContent = !cp ? "This month has not started." : empty ? "No finalized or imported days in " + ym + " yet." : !noLines ? "" : p.id + " is not certified on IF, FD or PF, so only the total off CIC applies (in the tiles and the table).";
-    $12("rep-cur-tiles").hidden = empty;
-    $12("rep-cur-legend").hidden = empty || noLines;
-    $12("rep-chart-currency").hidden = empty || noLines;
-    $12("rep-table-currency").closest("details").hidden = empty;
+    $13("rep-cur-empty").hidden = !empty && !noLines;
+    $13("rep-cur-empty").textContent = !cp ? "This month has not started." : empty ? "No finalized or imported days in " + ym + " yet." : !noLines ? "" : p.id + " is not certified on IF, FD or PF, so only the total off CIC applies (in the tiles and the table).";
+    $13("rep-cur-tiles").hidden = empty;
+    $13("rep-cur-legend").hidden = empty || noLines;
+    $13("rep-chart-currency").hidden = empty || noLines;
+    $13("rep-table-currency").closest("details").hidden = empty;
     if (empty) return;
-    const host = $12("rep-cur-tiles");
+    const host = $13("rep-cur-tiles");
     host.textContent = "";
-    $12("rep-cur-legend").textContent = "";
+    $13("rep-cur-legend").textContent = "";
     if (p) {
       CURRENCY_LINES.concat(["POS"]).forEach(function(k) {
         const name = k === "POS" ? "Total off CIC" : k;
@@ -12957,9 +13348,9 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         legendItem("ref-key", "Needed (" + h1(p.need[CURRENCY_LINES.find(function(k) {
           return p.need[k] !== null;
         })]) + " h)");
-        personCurrencyChart($12("rep-chart-currency"), cp, p);
+        personCurrencyChart($13("rep-chart-currency"), cp, p);
       }
-      table($12("rep-table-currency"), personCurrencyTable(p));
+      table($13("rep-table-currency"), personCurrencyTable(p));
       return;
     }
     CURRENCY_LINES.concat(["POS"]).forEach(function(k) {
@@ -12969,8 +13360,8 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     CURRENCY_LINES.forEach(function(k) {
       legendItem("", k, "var(--series-" + k + ")");
     });
-    currencyChart($12("rep-chart-currency"), cp);
-    table($12("rep-table-currency"), currencyTable(cp));
+    currencyChart($13("rep-chart-currency"), cp);
+    table($13("rep-table-currency"), currencyTable(cp));
   }
   function doExport() {
     if (!current2) return;
@@ -12989,38 +13380,38 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   }
   function initReportsUI() {
     onShow("view-reports", function() {
-      if (!$12("rep-month").value) $12("rep-month").value = localDate().slice(0, 7);
-      render5();
+      if (!$13("rep-month").value) $13("rep-month").value = localDate().slice(0, 7);
+      render6();
       renderCurrency2();
     });
-    $12("rep-month").addEventListener("change", renderCurrency2);
-    $12("rep-cur-who").addEventListener("change", renderCurrency2);
-    $12("rep-range").addEventListener("change", render5);
-    $12("rep-ring-back").addEventListener("click", function() {
+    $13("rep-month").addEventListener("change", renderCurrency2);
+    $13("rep-cur-who").addEventListener("change", renderCurrency2);
+    $13("rep-range").addEventListener("change", render6);
+    $13("rep-ring-back").addEventListener("click", function() {
       closeRing(false);
     });
     document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape" && ring && $12("view-reports").classList.contains("active")) closeRing(false);
+      if (e.key === "Escape" && ring && $13("view-reports").classList.contains("active")) closeRing(false);
     });
-    $12("rep-export").addEventListener("click", doExport);
-    $12("rep-print").addEventListener("click", function() {
+    $13("rep-export").addEventListener("click", doExport);
+    $13("rep-print").addEventListener("click", function() {
       window.print();
     });
     window.addEventListener("resize", function() {
-      if ($12("view-reports").classList.contains("active")) {
-        if (current2) render5();
+      if ($13("view-reports").classList.contains("active")) {
+        if (current2) render6();
         renderCurrency2();
       }
     });
   }
 
   // src/app/cic-paste-ui.js
-  var $13 = function(id) {
+  var $14 = function(id) {
     return document.getElementById(id);
   };
   var pending2 = null;
-  function render6() {
-    const out = $13("cic-paste-preview");
+  function render7() {
+    const out = $14("cic-paste-preview");
     if (!pending2) {
       out.innerHTML = "";
       return;
@@ -13075,21 +13466,21 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
         });
       });
     });
-    $13("cic-apply").addEventListener("click", applyList);
-    $13("cic-cancel").addEventListener("click", function() {
+    $14("cic-apply").addEventListener("click", applyList);
+    $14("cic-cancel").addEventListener("click", function() {
       pending2 = null;
-      render6();
+      render7();
     });
   }
   function reread() {
     if (!pending2 || !pending2.parsed.ok) return;
     pending2.diff = diffTracker(pending2.parsed.entries, getState().staff);
-    render6();
+    render7();
   }
   function readTrackerText(text) {
     const parsed = parseTracker(text);
     pending2 = { parsed, diff: parsed.ok ? diffTracker(parsed.entries, getState().staff) : null };
-    render6();
+    render7();
     return pending2;
   }
   function onPaste(e) {
@@ -13102,7 +13493,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   function applyList() {
     if (!pending2 || !pending2.parsed.ok) return;
     const state3 = getState();
-    const doPrefs = $13("cic-apply-prefs") && $13("cic-apply-prefs").checked;
+    const doPrefs = $14("cic-apply-prefs") && $14("cic-apply-prefs").checked;
     state3.cicTracker = { asOf: pending2.parsed.asOf, entries: pending2.parsed.entries.map(function(e) {
       return { initials: e.initials, minutes: e.minutes, desires: e.desires };
     }) };
@@ -13120,13 +13511,13 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     }
     save();
     pending2 = null;
-    render6();
+    render7();
     renderCicToday();
     toast("CIC list replaced (" + state3.cicTracker.entries.length + " people)" + (changed ? ", " + changed + " preference" + (changed === 1 ? "" : "s") + " updated." : "."));
   }
   function initCicPasteUI() {
-    $13("cic-paste").addEventListener("paste", onPaste);
-    $13("cic-paste").addEventListener("keydown", function(e) {
+    $14("cic-paste").addEventListener("paste", onPaste);
+    $14("cic-paste").addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         toast("Press Ctrl+V to paste the CIC tracker here.", "info");
@@ -13347,12 +13738,12 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   }
 
   // src/app/import-day-ui.js
-  var $14 = function(id) {
+  var $15 = function(id) {
     return document.getElementById(id);
   };
   var pending3 = null;
-  function render7(r) {
-    const out = $14("open-preview");
+  function render8(r) {
+    const out = $15("open-preview");
     if (!r) {
       out.innerHTML = "";
       return;
@@ -13366,28 +13757,28 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     }
     out.innerHTML = html;
     if (!r.day) return;
-    $14("open-go").addEventListener("click", function() {
+    $15("open-go").addEventListener("click", function() {
       const p = pending3;
       if (!p) return;
       openImportedDay(p.day, p.date).then(function(yes) {
         if (!yes) return;
         pending3 = null;
-        render7(null);
+        render8(null);
         navigate("view-schedule");
         toast("Opened " + (p.date || "the imported day") + " (" + p.day.people.length + " people).");
       });
     });
-    $14("open-cancel").addEventListener("click", function() {
+    $15("open-cancel").addEventListener("click", function() {
       pending3 = null;
-      render7(null);
+      render8(null);
     });
   }
   function onPaste2(e) {
     e.preventDefault();
-    const date = $14("open-date").value;
+    const date = $15("open-date").value;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       toast("Choose the date of that day first.", "error");
-      $14("open-date").focus();
+      $15("open-date").focus();
       return;
     }
     const cd = e.clipboardData;
@@ -13398,7 +13789,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       r.day.season = seasonFor(date, cfg);
       pending3 = { date, day: r.day };
     } else pending3 = null;
-    render7(r);
+    render8(r);
   }
   var book = null;
   async function inflateRaw(bytes, max) {
@@ -13462,7 +13853,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     return out;
   }
   function renderTabs() {
-    const out = $14("open-tabs");
+    const out = $15("open-tabs");
     if (!book) {
       out.innerHTML = "";
       return;
@@ -13499,17 +13890,17 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     const f = e.target.files && e.target.files[0];
     e.target.value = "";
     if (!f) return;
-    $14("open-file-name").textContent = "Reading " + f.name + "...";
+    $15("open-file-name").textContent = "Reading " + f.name + "...";
     f.arrayBuffer().then(function(buf) {
       return readWorkbook(new Uint8Array(buf), inflateRaw);
     }).then(function(sheets) {
       book = { file: f.name, tabs: sheets.map(readTab), showHidden: false };
-      $14("open-file-name").textContent = f.name + ": " + sheets.length + " tab" + (sheets.length === 1 ? "" : "s");
+      $15("open-file-name").textContent = f.name + ": " + sheets.length + " tab" + (sheets.length === 1 ? "" : "s");
       renderTabs();
     }).catch(function(err) {
       book = null;
       renderTabs();
-      $14("open-file-name").textContent = "";
+      $15("open-file-name").textContent = "";
       toast("Could not read " + f.name + ": " + err.message, "error");
     });
   }
@@ -13560,7 +13951,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     });
   }
   function bindTabs() {
-    const box = $14("open-tabs");
+    const box = $15("open-tabs");
     box.addEventListener("change", function(e) {
       const t = e.target;
       if (t.id === "open-show-hidden") {
@@ -13584,23 +13975,23 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     });
   }
   function initImportDayUI() {
-    $14("open-file-btn").addEventListener("click", function() {
-      $14("open-file").click();
+    $15("open-file-btn").addEventListener("click", function() {
+      $15("open-file").click();
     });
-    $14("open-file").addEventListener("change", onFile);
+    $15("open-file").addEventListener("change", onFile);
     bindTabs();
-    $14("home-import").addEventListener("click", function() {
+    $15("home-import").addEventListener("click", function() {
       navigate("view-open");
     });
-    $14("open-paste").addEventListener("paste", onPaste2);
-    $14("open-paste").addEventListener("keydown", function(e) {
+    $15("open-paste").addEventListener("paste", onPaste2);
+    $15("open-paste").addEventListener("keydown", function(e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         toast("Press Ctrl+V to paste the day tab here.", "info");
       }
     });
     onShow("view-open", function() {
-      if (!$14("open-date").value) $14("open-date").value = localDate();
+      if (!$15("open-date").value) $15("open-date").value = localDate();
     });
   }
 
@@ -13842,7 +14233,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
   };
 
   // src/app/full.js
-  var $15 = function(id) {
+  var $16 = function(id) {
     return document.getElementById(id);
   };
   var historyOn2 = function() {
@@ -13887,7 +14278,7 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     document.querySelectorAll('#sidebar [data-view="view-history"], #sidebar [data-view="view-reports"]').forEach(function(el2) {
       el2.classList.toggle("history-off", !on);
     });
-    if (!on && ($15("view-history").classList.contains("active") || $15("view-reports").classList.contains("active"))) navigate("view-schedule");
+    if (!on && ($16("view-history").classList.contains("active") || $16("view-reports").classList.contains("active"))) navigate("view-schedule");
   }
   var CURRENCY_FIELDS = [
     { id: "cur-pos", sec: "currency", label: "Hours per month on each of PF, IF and FD", type: "number", min: 0, max: 50, step: 0.5, get: function(c) {
@@ -13961,11 +14352,11 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     render: function(v) {
       const ready = v.has && (!v.working || isDone(v.current));
       ["sched-print", "sched-xlsx"].forEach(function(id) {
-        $15(id).hidden = !ready;
+        $16(id).hidden = !ready;
       });
-      $15("sched-finalize").hidden = !v.working;
-      $15("sched-finalize").title = historyOn2() ? "Record this day's hours in History, then print or export it" : "Finish this schedule, then print or export it";
-      if (v.day) $15("print-head").textContent = v.day.title + " (" + v.day.season + ")";
+      $16("sched-finalize").hidden = !v.working;
+      $16("sched-finalize").title = historyOn2() ? "Record this day's hours in History, then print or export it" : "Finish this schedule, then print or export it";
+      if (v.day) $16("print-head").textContent = v.day.title + " (" + v.day.season + ")";
     },
     options: function() {
       return historyOn2() ? datesOf(loadArchive()).reverse().map(function(d) {
@@ -14010,11 +14401,13 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
       finishedFor = keyOf(c);
       schedule.render({ has: true, working: true, day: s.day, current: c });
       renderSteps();
-      return choose({
-        title: (historyOn2() ? "Finalized" : "Done") + (c.date ? ": " + c.date : ""),
-        message: "Print it or download it for Excel. Both stay on the toolbar.",
-        choices: [{ value: "print", label: "Print" }, { value: "excel", label: "Excel (.xlsx)", primary: true }],
-        close: "Done"
+      return (isLinked() ? saveLinked() : Promise.resolve()).then(function() {
+        return choose({
+          title: (historyOn2() ? "Finalized" : "Done") + (c.date ? ": " + c.date : ""),
+          message: "Print it or download it for Excel. Both stay on the toolbar.",
+          choices: [{ value: "print", label: "Print" }, { value: "excel", label: "Excel (.xlsx)", primary: true }],
+          close: "Done"
+        });
       });
     }).then(function(v) {
       if (v === "print") window.print();
@@ -14022,15 +14415,15 @@ h2 .qtip, h1 .qtip { font-size: 1rem; }
     });
   }
   function wireScheduleButtons() {
-    $15("sched-print").addEventListener("click", function() {
+    $16("sched-print").addEventListener("click", function() {
       window.print();
     });
-    $15("sched-xlsx").addEventListener("click", downloadExcel);
-    $15("sched-finalize").addEventListener("click", finalizeAndShare);
+    $16("sched-xlsx").addEventListener("click", downloadExcel);
+    $16("sched-finalize").addEventListener("click", finalizeAndShare);
     window.addEventListener("beforeprint", function() {
       fitForPrint();
       const s = shownDay();
-      if (s.working && $15("view-schedule").classList.contains("active")) markShared(s.current);
+      if (s.working && $16("view-schedule").classList.contains("active")) markShared(s.current);
     });
     window.addEventListener("afterprint", unfitPrint);
   }
